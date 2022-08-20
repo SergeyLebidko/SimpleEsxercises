@@ -1,16 +1,26 @@
-import React from 'react';
-import { HashRouter } from 'react-router-dom';
-import Menu from './Menu';
-import styled from 'styled-components';
+import React from "react";
+import { HashRouter } from "react-router-dom";
+import Menu from "./Menu";
+import styled, { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+  }
+`;
 
 function App() {
   return (
-    <HashRouter>
-      <Menu />
-      <Container>
-        Приложение для отработки навыков и приемов работы с React и его инфораструктурой
-      </Container>
-    </HashRouter>
+    <>
+      <GlobalStyle />
+      <HashRouter>
+        <Menu />
+        <Container>
+          Приложение для отработки навыков и приемов работы с React и его
+          инфораструктурой
+        </Container>
+      </HashRouter>
+    </>
   );
 }
 
