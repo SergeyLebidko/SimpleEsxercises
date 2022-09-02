@@ -1,7 +1,12 @@
 import React from "react";
-import { HashRouter } from "react-router-dom";
+import { HashRouter, Route, Router, Routes } from "react-router-dom";
 import Menu from "./Menu";
 import styled, { createGlobalStyle } from "styled-components";
+import Page1 from "./pages/Page1";
+import Page2 from "./pages/Page2";
+import Page3 from "./pages/Page3";
+import Page4 from "./pages/Page4";
+import MainPage from "./pages/MainPage";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -15,20 +20,16 @@ function App() {
       <GlobalStyle />
       <HashRouter>
         <Menu />
-        <Container>
-          Приложение для отработки навыков и приемов работы с React и его
-          инфораструктурой
-        </Container>
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/page1" element={<Page1 />}/>
+          <Route path="/page2" element={<Page2 />}/>
+          <Route path="/page3" element={<Page3 />}/>
+          <Route path="/page4" element={<Page4 />}/>
+        </Routes>
       </HashRouter>
     </>
   );
 }
-
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-`;
 
 export default App;
