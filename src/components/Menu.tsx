@@ -46,11 +46,12 @@ const Button = styled.div<{ isOpen: boolean }>`
   position: absolute;
   top: 8px;
   right: 8px;
-  width: 24px;
-  height: 24px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
   transition: all 700ms;
-  background-color: ${props => props.isOpen ? "DeepSkyBlue" : "LightGrey"};
+  border: 4px solid ${props => props.isOpen ? "DeepSkyBlue" : "LightGrey"};
+  background-color: transparent;
   cursor: pointer;
 `;
 
